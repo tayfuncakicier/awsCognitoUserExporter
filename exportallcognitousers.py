@@ -8,12 +8,18 @@ REGION = 'eu-west-1'
 USER_POOL_ID = ''
 LIMIT = 60
 MAX_NUMBER_RECORDS = 0
-REQUIRED_ATTRIBUTE = ["-attr", "name", "family_name", "phone_number", "UserStatus", "Enabled"]
+REQUIRED_ATTRIBUTE = ['name', 'family_name', 'phone_number', 'UserStatus', 'Enabled']
 CSV_FILE_NAME = 'all-users.csv'
 USER_POOL_NAME = ''
 NEXT_TOKEN = ''
 
+#prepare the csv file headers
 csv_file = open(CSV_FILE_NAME, 'w')
+REQUIRED_ATTRIBUTE.append('UserPoolName')
+csv_new_line = {REQUIRED_ATTRIBUTE[i]: '' for i in range(len(REQUIRED_ATTRIBUTE))}
+csv_file.write(",".join(csv_new_line.keys()) + '\n')
+
+#definition of aws client
 client = boto3.client('cognito-idp', REGION)
 
 #step:1 user pool list import.
@@ -37,9 +43,6 @@ with open('user-pools.txt') as userPoolsListFile:
     for userpool in userPoolList:
         USER_POOL_ID = userpool.split()[0]
         USER_POOL_NAME = userpool.split()[1]
-        REQUIRED_ATTRIBUTE.append('UserPoolName')
-        csv_new_line = {REQUIRED_ATTRIBUTE[i]: '' for i in range(len(REQUIRED_ATTRIBUTE))}
-        csv_file.write(",".join(csv_new_line.keys()) + '\n')
         USER_POOL_ID = userpool.split()[0]               
         def datetimeconverter(o):
             if isinstance(o, datetime.datetime):
