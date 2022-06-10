@@ -13,5 +13,8 @@ To start export proccess you shout run next command (__Note__: use `python3` if 
 - `$ python exportallcognitousers.py
 - Wait until you see output `INFO: End of Cognito User Pool reached`
 - Find file `all-users.csv` that contains all exported users. [Example](https://github.com/hawkerfun/cognito-csv-exporter/blob/master/CognitoUsers.csv)
-# awsCognitoUserExporter
+
+## Run Phone Number Verification
+To start export proccess you shout run next command (__Note__: use `python3` if you have Python 3 instaled)
+- `$ python phoneNumberVerification.py
 # awsCognitoUserExporter
