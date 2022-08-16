@@ -9,12 +9,12 @@ In order to use this script you should have Python 2 or Python 3 installed on yo
 
 ## Run export
 
-To start export proccess you shout run next command (__Note__: use `python3` if you have Python 3 instaled)
+To start export process you should run next command (__Note__: use `python3` if you have Python 3 instaled)
 - `$ python exportallcognitousers.py
 - Wait until you see output `INFO: End of Cognito User Pool reached`
 - Find file `all-users.csv` that contains all exported users. [Example](https://github.com/hawkerfun/cognito-csv-exporter/blob/master/CognitoUsers.csv)
 
 ## Run Phone Number Verification
-To start export proccess you shout run next command (__Note__: use `python3` if you have Python 3 instaled)
+To start verificaiton process you should run next command (__Note__: use `python3` if you have Python 3 instaled)
 - `$ python phoneNumberVerification.py
 # awsCognitoUserExporter
